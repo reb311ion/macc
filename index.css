@@ -554,7 +554,7 @@ body {
       rgba(10, 10, 10, 0.4),
       rgb(10, 10, 10, 0.4)
     ),
-    url("http://eskipaper.com/images/fez-game-wallpaper-1.jpg");
+    url("https://raw.githubusercontent.com/reb311ion/reb311ion.github.io/master/bg.jpg");
   --background-background: #fff;
 }
 .btn {
