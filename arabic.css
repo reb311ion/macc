@@ -23,7 +23,6 @@
         #write {
             margin: 0px auto;
             height: auto;
-            width: inherit;
             word-break: normal;
             overflow-wrap: break-word;
             position: relative;
