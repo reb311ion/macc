@@ -30,7 +30,7 @@
 - ==Information stealer== 
   برمجية خبيثة تم تصميمها لسرقة المعلومات الحساسة مثل الحسابات البنكية و الارقام السرية للضحايا. ويتضمن ذلك النوع:
   
-- ==Keyloggers==
+  - ==Keyloggers==
   - ==spyware==
   - ==sniffers==
   - ==form grabbers==
@@ -78,7 +78,7 @@
   
   و يتضمن قراءة الـ Disassembly & Pseudo decompiled code لفهم و تحليل خصائص البرمجية الخبيثة بدون تشغيلها.
   
-  - ==Dynamic code analysis== 
+- ==Dynamic code analysis== 
   
     و يتضمن تحليل البرمجية الخبيثة اثناء تشغيلها بحيث يتم التحكم فيها عن طريق التنقيح Debugging لفهم و تحليل خصائصها.
   
