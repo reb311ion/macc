@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="en"><head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155394613-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-155394613-1');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AgentTesla</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../english.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.png) center;"></div>
+    <table id="profile_blog">
+    </table>
+    <table id="profile_blog">
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">The Short Villain</h1>
+      <h2 id="blog_sub_title">Data Exfiltration Via Custom Shorten Links </h2>
+<div  id='write'  class = 'is-node'><p><span>Data exfiltration is the unauthorized copying, transfer or retrieval of data from a computer or server. Data exfiltration is a malicious activity performed through various techniques, typically by cybercriminals over the Internet or another network. Exfiltration consists of techniques that adversaries may use to steal data from your network. Once they’ve collected data, adversaries often package it to avoid detection. This can include compression and encryption. Data Exfiltration may happen in many ways, one of the creative ways out there is to exfiltrate data via DNS where The IP traffic is simply encoded using something like Base64, and broken into chunks that fit in DNS queries. The queries are then sent to the specially modified DNS server, where they are unpacked and sent out onto the internet. But this considered off-topic for now so we won&#39;t get deeper into data exfiltration techniques. </span></p><h3><a name="how-can-short-links-be-abused-for-c2" class="md-header-anchor"></a><span>How can short links be abused for C2?</span></h3><p><span>I was searching for an easy way to share text files quickly, a simple search led me to </span><a href='https://transfer.sh/'><span>transfer.sh</span></a><span>, an easy file sharing service that enables users to store files right from the command line. Verhoef (the Author) once said:</span></p><blockquote><p><span>It is being used by a lot of people,” he said. “Some are using it for uploading log files, others are exporting complete video surveillance to us. </span><strong><span>Sometimes it is being abused, by distributing malware, botnets and other malicious tools</span></strong><span>, but we try to stop it as soon as possible. One time a porn website was serving porn photos through us, and when we found out we had all photos replaced by dogs and kittens.</span></p></blockquote><p><img src="image-20200309003309937.png" referrerpolicy="no-referrer" alt="image-20200309003309937"></p><p><span>Which isn&#39;t that surprising, Malware authors use almost everything they can reach to achieve their goals.  At this point the question was &quot;can adversaries use the same way of sending malware for receiving back data?&quot;, and for the first moment it seemed very hard as for that to happen the attacker should know the randomly generated URI which is generated in the following format:</span></p><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 37px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 25px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -25px; width: 25px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 17px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">https://transfer.sh/[a-zA-Z0-9]{5,6}/MyFileName</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 20px;"></div><div class="CodeMirror-gutters" style="height: 20px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 25px;"></div></div></div></div></pre><p><span>Bruteforcing the URI won&#39;t be effective as the server delays its response and other methods like </span><code>HEAD</code><span> which could be used to check for the </span><code>200 OK</code><span> status code are not allowed:</span></p><p><img src="image-20200308190948868.png" referrerpolicy="no-referrer" alt="image-20200308190948868"></p><p>&nbsp;</p><h5><a name="start-writing-code" class="md-header-anchor"></a><span>Start writing code</span></h5><p><span>I first took 5Min to write a simple </span><code>C#</code><span> client to use later:</span></p><script src="https://gist.github.com/reb311ion/e9893958b4e4d7a07b1d59c2024b3cf9.js"></script><p><img src="image-20200308193714361.png" referrerpolicy="no-referrer" alt="image-20200308193714361"></p><p><span>After trying many things that failed I came across the idea of using custom shorten links, what I needed is the ability to create a custom shorten link in an automated manner and anonymously so the rules are:</span></p><ul><li><span>No API keys to access the service</span></li><li><span>No captcha to stop us from accessing it without an API key</span></li></ul><p><span>Surprisingly, there are services out there that let us create custom shorten links without captcha such as: </span></p><ul><li><a href='https://tiny.cc/' target='_blank' class='url'>https://tiny.cc/</a></li><li><a href='https://bit.do/' target='_blank' class='url'>https://bit.do/</a></li><li><a href='https://tinyurl.com/' target='_blank' class='url'>https://tinyurl.com/</a></li></ul><p><img src="image-20200308194756484.png" referrerpolicy="no-referrer" alt="image-20200308194756484"></p><p><span>The next step was to build a client for one of the above services, I chose </span><a href='https://tiny.cc/'><span>tiny.cc</span></a><span>, this one was somehow challenging as the </span><code>POST</code><span> parameters names are getting randomized so you should parse the HTML source first and then submit the </span><code>POST</code><span> request:</span></p><script src="https://gist.github.com/reb311ion/c29748f295bb1166c11968ca76a6fff2.js"></script><p><img src="image-20200308200245831.png" referrerpolicy="no-referrer" alt="image-20200308200245831"></p><p>&nbsp;</p><h5><a name="putting-things-together" class="md-header-anchor"></a><span>Putting things together </span></h5><p><span>Now we can:</span></p><ul><li><span>Upload Files anonymously and get back the URL which we (the attacker) don&#39;t know its URI</span></li><li><span>shorten the URL with custom URI that we know</span></li></ul><p><span>for demo purpose I used the Keylogger </span><a href='https://github.com/NYAN-x-CAT/LimeLogger'><span>LimeLogger</span></a><span> to generate some data that an attacker maybe interested to harvest and built a basic C# Malware. The config section and variables including log file path was defined as the following:</span></p><script src="https://gist.github.com/reb311ion/b1cde47fadde3d812103081a59b16ae5.js"></script><p><span>The malware will do the following:</span></p><p><span>1 - Check if Mutex name is created. If true, terminate the process. If false, create the mutex with the given name:</span></p><script src="https://gist.github.com/reb311ion/c0e156e9c74bb4adcf51711020ca5238.js"></script><p><span>2 - Monitor and Log keystrokes in the </span><code>%TEMP%</code><span> directory under random name generated in the format </span><code>[a-zA-Z0-9]{10}\.log</code><span>:</span></p><script src="https://gist.github.com/reb311ion/206d84b2c4fb9d5787081beaf3d62f50.js"></script><p><span>3 - When log file size reaches a prespecified size, encrypt it with </span><code>AES/CBC</code><span> mode using stored </span><code>KEY</code><span> and </span><code>IV</code><span>:</span></p><script src="https://gist.github.com/reb311ion/139414db2d424bd7ef4551ef1e47acd7.js"></script><p><span>4 - Upload the encrypted log file to </span><a href='https://transfer.sh/'><span>transfer.sh</span></a><span> and create shorten </span><code>URL</code><span> using a prespecified </span><code>URI</code><span> with a number that gets incremented each time a shorten </span><code>URL</code><span> is created:</span></p><script src="https://gist.github.com/reb311ion/7acc19f17473366327ea7a22926abe7b.js"></script><p><span>5 - Go Back to step Two</span></p><p><span>Demo:</span></p><p><img src="E:\reb311ion\MalwareAnalysisReports\image-20200308235918994.png" referrerpolicy="no-referrer" alt="image-20200308235918994"></p><p>&nbsp;</p><p><span>The full functioning POC can be found here: </span><a href='https://gist.github.com/reb311ion/3b9df9b23a73d7a327a2b6e79520fab6'><span>c02</span></a></p><h3><a name="disclaimer" class="md-header-anchor"></a><span>Disclaimer</span></h3><p><span>I&#39;m not responsible for any actions, and or damages, caused by this content or the code snippets used here.</span>
+<span>You bear the full responsibility of your actions and acknowledge that these code snippets were created for demonstration</span>
+<span>purposes only and its main purpose is NOT to be used maliciously, or on any system that you do not own, or have the right to use.</span></p><hr /></div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>
